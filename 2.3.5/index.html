@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>AngularJS</title>
+	<style type="text/css">
+		.error {
+			background-color: red;
+		}
+		.warning {
+			background-color: yellow;
+		}
+		.selected {
+			background-color: lightgreen;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+
+<div class="container">
+	<div class="row" ng-controller="HeaderController">
+		<div ng-class="{error: isError, warning: isWarning}">{{messageText}}</div>
+		<button class="btn" ng-click="showError()">エラーを発生させる</button>
+		<button class="btn" ng-click="showWarning()">警告を発生させる</button>
+	</div>
+
+	<div class="row" ng-controller="RestaurantTableController">
+		<table class="table">
+			<tbody>
+			<tr ng-repeat="restaurant in directory" ng-mouseover="selectRestaurant($index)" ng-class="{selected: $index==selectedRow}">
+				<td>{{restaurant.name}}</td>
+				<td>{{restaurant.cuisine}}</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+</body>
+</html>
