@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>AngularJS</title>
+</head>
+<body ng-app="app">
+
+<div ng-controller="SomeController">
+	<button ng-click="clickUnfocused()">フォーカスなし</button>
+	<button ngbk-focus ng-click="clickFocused()">フォーカスあり！</button>
+	<div>{{message.text}}</div>
+</div>
+
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="controllers.js"></script>
+</body>
+</html>
