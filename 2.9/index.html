@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>AngularJS</title>
+</head>
+<body ng-app>
+
+<h1>登録フォーム</h1>
+<form action="" name="addUserForm" ng-controller="AddUserController">
+	<div ng-show="message">{{message}}</div>
+	<div>ファーストネーム: <input type="text" name="firstName" ng-model="user.first" required placeholder=""/></div>
+	<div>ラストネーム: <input type="text" name="lasttName" ng-model="user.last" required placeholder=""/></div>
+	<div>メールアドレス: <input type="email" name="email" ng-model="user.email" required placeholder=""/></div>
+	<div>年齢: <input type="number" name="age" ng-model="user.age" ng-maxlength="3" ng-min="1" placeholder=""/></div>
+	<div><button ng-click="addUser()" ng-disabled="!addUserForm.$valid">送信</button></div>
+</form>
+
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="controllers.js"></script>
+</body>
+</html>
